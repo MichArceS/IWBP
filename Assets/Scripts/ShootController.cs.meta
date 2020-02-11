@@ -4,9 +4,9 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - shootPrefab: {fileID: 1972274818642249429, guid: cde6fd8ea917ef546b6422af4c0c1b2d,
+  - shootPrefab: {fileID: 2006229823561648304, guid: cde6fd8ea917ef546b6422af4c0c1b2d,
       type: 3}
-  - shootPrefabLeft: {fileID: 3158585839510825050, guid: 76522c429b492b841b0e1dc16e3c2d6c,
+  - shootPrefabLeft: {fileID: 5883365504394096092, guid: be2949ec006e08a48ab6eff86518d587,
       type: 3}
   executionOrder: 0
   icon: {instanceID: 0}

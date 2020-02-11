@@ -11,13 +11,14 @@ public class ShootController : MonoBehaviour
     {
         Vector3 pos = PlayerController.v3;
         Quaternion q = new Quaternion();
-        if (Input.GetKeyUp(KeyCode.Space) && PlayerController.isRight)
-        {
-            Instantiate(shootPrefab,pos,q);
-        }
-        if (Input.GetKeyUp(KeyCode.Space) && !PlayerController.isRight)
+        if (shootPrefabLeft != null && Input.GetKeyUp(KeyCode.Space) && !PlayerController.isRight)
         {
             Instantiate(shootPrefabLeft, pos, q);
         }
+        if (shootPrefab != null && Input.GetKeyUp(KeyCode.Space) && PlayerController.isRight)
+        {
+            Instantiate(shootPrefab,pos,q);
+        }
+        
     }
 }

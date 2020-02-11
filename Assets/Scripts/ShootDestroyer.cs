@@ -15,6 +15,6 @@ public class ShootDestroyer : MonoBehaviour
             Destroy(transform.parent.gameObject);
             timer = 0;
         }
-        
+
     }
 }

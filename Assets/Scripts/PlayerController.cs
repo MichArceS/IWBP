@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        v3 = gameObject.GetComponent<Transform>().position;
+        v3 = transform.position;
         if (Input.GetKey("left"))
         {
             gameObject.GetComponent<SpriteRenderer>().flipX = true;
