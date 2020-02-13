@@ -9,12 +9,14 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dif = transform.position - PlayerController.v3;
+        dif = transform.position - new Vector3(PlayerController.v3.x, 0, 0);
     }
 
     // LateUpdate is called once after update a frame
     void LateUpdate()
     {
-        transform.position = PlayerController.v3 + dif + new Vector3(0,75,0);
+        transform.position = PlayerController.v3 + dif;
+
     }
+    
 }
