@@ -61,13 +61,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\CheckPointController1.cs" />
+    <Compile Include="Assets\Scripts\CheckPointManager.cs" />
     <Compile Include="Assets\Scripts\PlatformBoxController.cs" />
+    <Compile Include="Assets\Scripts\PlatformController2.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\ShootController.cs" />
     <Compile Include="Assets\Scripts\ShootDestroyer.cs" />
     <Compile Include="Assets\Scripts\SwitchController.cs" />
+    <Compile Include="Assets\Scripts\SwitchController2.cs" />
     <Compile Include="Assets\Scripts\TextManager.cs" />
     <Compile Include="Assets\Scripts\TrapManager.cs" />
+    <Compile Include="Assets\Scripts\TrapManager2.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/User/Desktop/IWannaBePolitecnico/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

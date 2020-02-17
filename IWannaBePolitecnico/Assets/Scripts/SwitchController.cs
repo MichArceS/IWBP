@@ -26,7 +26,14 @@ public class SwitchController : MonoBehaviour
                 a = true;
             }
         }
-            
+        if (a)
+        {
+            Destroy(gameObject);
+            switch1.SetActive(true);
+            show = false;
+            PlatformBoxController.move = true;
+        }
+
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -36,13 +43,6 @@ public class SwitchController : MonoBehaviour
             if (collision.transform.tag == "Player")
             {
                 activate = true;
-                if (a)
-                {
-                    gameObject.SetActive(false);
-                    switch1.SetActive(true);
-                    show = false;
-                    PlatformBoxController.move = true;
-                }
             }
         }
     }

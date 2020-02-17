@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    public GameObject bg;
     public Vector3 dif;
 
     // Start is called before the first frame update
@@ -16,6 +17,7 @@ public class CameraController : MonoBehaviour
     void LateUpdate()
     {
         transform.position = PlayerController.v3 + dif;
+        bg.transform.position = PlayerController.v3 + new Vector3(70,100,0);
     }
     
 }

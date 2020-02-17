@@ -13,6 +13,8 @@ TagManager:
   - switch
   - shoot
   - enemy
+  - moving crate
+  - checkpoint
   layers:
   - Default
   - TransparentFX

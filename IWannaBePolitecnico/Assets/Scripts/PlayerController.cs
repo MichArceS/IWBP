@@ -10,11 +10,13 @@ public class PlayerController : MonoBehaviour
     public static bool isRight = true;
     public static bool alive;
     public Text DT;
+    public Text RT;
 
     // Update is called once per frame
     void Start()
     {
-        alive = true;    
+        alive = true;
+        v3 = transform.position;
     }
     void Update()
     {
@@ -39,6 +41,16 @@ public class PlayerController : MonoBehaviour
                 jump = false;
             }
         }
+        if (!alive)
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                alive = true;
+                respawn(CheckPointManager.checkpointPosition);
+                DT.text = "";
+                RT.text = "";
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -55,7 +67,31 @@ public class PlayerController : MonoBehaviour
             alive = false;
             DT.transform.position = v3 + new Vector3(220,100,0);
             DT.text = "YOU DIED";
+            RT.transform.position = v3 + new Vector3(220, 95, 0);
+            RT.text = "Press R to restart";
 
         }
+        if (collision.transform.tag == "moving crate")
+        {
+            if (v3.y > collision.transform.position.y + 28f)
+            {
+                jump = true;
+                gameObject.transform.parent = collision.transform;
+            }
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "moving crate")
+        {
+            gameObject.transform.parent = null;
+            
+        }
+    }
+
+    public void respawn(Vector3 v)
+    {
+        gameObject.transform.position = v;
     }
 }
