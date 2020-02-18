@@ -63,6 +63,8 @@
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\CheckPointController1.cs" />
     <Compile Include="Assets\Scripts\CheckPointManager.cs" />
+    <Compile Include="Assets\Scripts\DoorController.cs" />
+    <Compile Include="Assets\Scripts\DoorSwitchController.cs" />
     <Compile Include="Assets\Scripts\PlatformBoxController.cs" />
     <Compile Include="Assets\Scripts\PlatformController2.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />

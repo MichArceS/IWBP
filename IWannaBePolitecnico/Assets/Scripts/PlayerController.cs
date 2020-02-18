@@ -86,12 +86,32 @@ public class PlayerController : MonoBehaviour
         if (collision.transform.tag == "moving crate")
         {
             gameObject.transform.parent = null;
-            
+            jump = false;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.transform.tag == "Platform" || collision.transform.tag == "crate")
+        {
+            jump = false;
         }
     }
 
     public void respawn(Vector3 v)
     {
         gameObject.transform.position = v;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.tag == "acid")
+        {
+            alive = false;
+            DT.transform.position = v3 + new Vector3(220, 100, 0);
+            DT.text = "YOU DIED";
+            RT.transform.position = v3 + new Vector3(220, 95, 0);
+            RT.text = "Press R to restart";
+        }
     }
 }
