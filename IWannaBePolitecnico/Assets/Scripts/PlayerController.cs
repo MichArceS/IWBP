@@ -23,34 +23,67 @@ public class PlayerController : MonoBehaviour
         v3 = transform.position;
         if (alive)
         {
-            if (Input.GetKey("left"))
+            if (!jump)
+            {
+                gameObject.GetComponent<Animator>().SetBool("jump", true);
+            }
+            if (Input.GetKey("left") && jump)
             {
                 gameObject.GetComponent<SpriteRenderer>().flipX = true;
                 gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-18000f * Time.deltaTime, 0));
                 isRight = false;
+                gameObject.GetComponent<Animator>().SetBool("move", true);
             }
-            if (Input.GetKey("right"))
+            if (Input.GetKey("right") && jump)
             {
                 gameObject.GetComponent<SpriteRenderer>().flipX = false;
                 gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(18000f * Time.deltaTime, 0));
                 isRight = true;
+                gameObject.GetComponent<Animator>().SetBool("move", true);
+            }
+            if (Input.GetKey("left") && !jump)
+            {
+                gameObject.GetComponent<SpriteRenderer>().flipX = true;
+                gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-18000f * Time.deltaTime, 0));
+                isRight = false;
+                gameObject.GetComponent<Animator>().SetBool("move", false);
+                gameObject.GetComponent<Animator>().SetBool("jump", true);
+            }
+            if (Input.GetKey("right") && !jump)
+            {
+                gameObject.GetComponent<SpriteRenderer>().flipX = false;
+                gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(18000f * Time.deltaTime, 0));
+                isRight = true;
+                gameObject.GetComponent<Animator>().SetBool("move", false);
+                gameObject.GetComponent<Animator>().SetBool("jump", true);
             }
             if (Input.GetKeyDown("space") && jump)
             {
+                gameObject.GetComponent<Animator>().SetBool("move", false);
+                gameObject.GetComponent<Animator>().SetBool("jump", true);
                 gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 6000f));
                 gameObject.GetComponent<AudioSource>().Play();
                 jump = false;
+            }
+            if (jump)
+            {
+                gameObject.GetComponent<Animator>().SetBool("jump", false);
             }
         }
         if (!alive)
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
+                gameObject.GetComponent<Animator>().SetBool("move", false);
                 alive = true;
                 respawn(CheckPointManager.checkpointPosition);
                 DT.text = "";
                 RT.text = "";
             }
+        }
+        if (!Input.GetKey("left") && !Input.GetKey("right"))
+        {
+            gameObject.GetComponent<Animator>().SetBool("move", false);
         }
     }
 
