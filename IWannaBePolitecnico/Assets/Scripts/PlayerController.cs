@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown("space") && jump)
             {
                 gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 6000f));
+                gameObject.GetComponent<AudioSource>().Play();
                 jump = false;
             }
         }

@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\SwitchController.cs" />
     <Compile Include="Assets\Scripts\SwitchController2.cs" />
     <Compile Include="Assets\Scripts\TextManager.cs" />
+    <Compile Include="Assets\Scripts\Transition.cs" />
     <Compile Include="Assets\Scripts\TrapManager.cs" />
     <Compile Include="Assets\Scripts\TrapManager2.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
