@@ -4,10 +4,27 @@ using UnityEngine;
 
 public class CheckPointManager : MonoBehaviour
 {
+    public GameObject cam;
+    private static CheckPointManager cm;
     public static Vector3 checkpointPosition;
+    public static Vector3 dif;
     // Start is called before the first frame update
     void Start()
     {
-        checkpointPosition = PlayerController.v3;
+            dif = cam.transform.position - checkpointPosition;
     }
+
+    void Awake()
+    {
+        if (cm == null)
+        {
+            cm = this;
+            DontDestroyOnLoad(cm);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }

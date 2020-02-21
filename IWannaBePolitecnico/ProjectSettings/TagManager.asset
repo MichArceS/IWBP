@@ -16,6 +16,7 @@ TagManager:
   - moving crate
   - checkpoint
   - acid
+  - CM
   layers:
   - Default
   - TransparentFX

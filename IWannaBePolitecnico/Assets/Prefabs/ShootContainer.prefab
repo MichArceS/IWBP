@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2006229823456206149}
   - component: {fileID: 5255641077384555342}
   - component: {fileID: 1109727478809190557}
-  - component: {fileID: 1542519916631458718}
+  - component: {fileID: 2795618786544397624}
   m_Layer: 0
   m_Name: Shoot
   m_TagString: shoot
@@ -162,7 +162,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!82 &1542519916631458718
+--- !u!82 &2795618786544397624
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

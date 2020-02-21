@@ -33,7 +33,6 @@ public class SwitchController : MonoBehaviour
             show = false;
             PlatformBoxController.move = true;
         }
-
     }
 
     private void OnTriggerStay2D(Collider2D collision)

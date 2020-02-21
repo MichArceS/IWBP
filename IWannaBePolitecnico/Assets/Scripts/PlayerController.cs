@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
     {
         alive = true;
         v3 = transform.position;
+        gameObject.transform.position = CheckPointManager.checkpointPosition;
     }
     void Update()
     {
@@ -76,7 +78,7 @@ public class PlayerController : MonoBehaviour
             {
                 gameObject.GetComponent<Animator>().SetBool("move", false);
                 alive = true;
-                respawn(CheckPointManager.checkpointPosition);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 DT.text = "";
                 RT.text = "";
             }
@@ -130,11 +132,6 @@ public class PlayerController : MonoBehaviour
         {
             jump = false;
         }
-    }
-
-    public void respawn(Vector3 v)
-    {
-        gameObject.transform.position = v;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
