@@ -6,19 +6,22 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject cam;
     public static bool jump = false;
     public static Vector3 v3;
     public static bool isRight = true;
     public static bool alive;
     public Text DT;
     public Text RT;
+    public static Vector3 dif;
 
     // Update is called once per frame
     void Start()
     {
+        dif = cam.transform.position - transform.position;
         alive = true;
         v3 = transform.position;
-        gameObject.transform.position = CheckPointManager.checkpointPosition;
+        gameObject.transform.position  = CheckPointManager.checkpointPosition;
     }
     void Update()
     {

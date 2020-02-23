@@ -17,6 +17,7 @@ TagManager:
   - checkpoint
   - acid
   - CM
+  - wall
   layers:
   - Default
   - TransparentFX

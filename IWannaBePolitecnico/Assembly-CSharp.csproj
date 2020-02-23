@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\CameraFreezer.cs" />
     <Compile Include="Assets\Scripts\CheckPointController1.cs" />
     <Compile Include="Assets\Scripts\CheckPointManager.cs" />
     <Compile Include="Assets\Scripts\DoorController.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Assets\Scripts\SwitchController2.cs" />
     <Compile Include="Assets\Scripts\TextManager.cs" />
     <Compile Include="Assets\Scripts\Transition.cs" />
+    <Compile Include="Assets\Scripts\TransitionStage1_1.cs" />
     <Compile Include="Assets\Scripts\TrapManager.cs" />
     <Compile Include="Assets\Scripts\TrapManager2.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
