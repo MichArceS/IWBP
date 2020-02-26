@@ -29,7 +29,7 @@ public class CameraController : MonoBehaviour
             }
             if (SceneManager.GetActiveScene().name == "Stage1_1")
             {
-                transform.position = PlayerController.v3 + PlayerController.dif - new Vector3(30f, 50f, 0);
+                transform.position = PlayerController.v3 + PlayerController.dif;
                 bg.transform.position = PlayerController.v3 + new Vector3(70, 100, 0);
             }
         }

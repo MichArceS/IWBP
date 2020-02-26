@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public GameObject cam;
-    public static bool jump = false;
+    public static bool jump;
     public static Vector3 v3;
     public static bool isRight = true;
     public static bool alive;
@@ -15,13 +15,13 @@ public class PlayerController : MonoBehaviour
     public Text RT;
     public static Vector3 dif;
 
-    // Update is called once per frame
     void Start()
     {
         dif = cam.transform.position - transform.position;
         alive = true;
+        jump = false;
         v3 = transform.position;
-        gameObject.transform.position  = CheckPointManager.checkpointPosition;
+        transform.position = CheckPointManager.checkpointPosition;
     }
     void Update()
     {
@@ -104,11 +104,18 @@ public class PlayerController : MonoBehaviour
         if (collision.transform.tag == "spike")
         {
             alive = false;
-            DT.transform.position = v3 + new Vector3(220,100,0);
             DT.text = "YOU DIED";
-            RT.transform.position = v3 + new Vector3(220, 95, 0);
             RT.text = "Press R to restart";
-
+            if (SceneManager.GetActiveScene().name == "Tutorial")
+            {
+                DT.transform.position = v3 + new Vector3(220, 100, 0);
+                RT.transform.position = v3 + new Vector3(220, 95, 0);
+            }
+            if (SceneManager.GetActiveScene().name == "Stage1_1")
+            {
+                DT.transform.position = v3 + new Vector3(0, 100, 0);
+                RT.transform.position = v3 + new Vector3(0, 95, 0);
+            }
         }
         if (collision.transform.tag == "moving crate")
         {
@@ -122,7 +129,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.transform.tag == "moving crate")
+        if (collision.transform.tag == "moving crate" || collision.transform.tag == "crate")
         {
             gameObject.transform.parent = null;
             jump = false;
@@ -139,13 +146,21 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "acid")
+        if (collision.transform.tag == "acid" || collision.transform.tag == "arrow")
         {
             alive = false;
-            DT.transform.position = v3 + new Vector3(220, 100, 0);
             DT.text = "YOU DIED";
-            RT.transform.position = v3 + new Vector3(220, 95, 0);
             RT.text = "Press R to restart";
+            if (SceneManager.GetActiveScene().name == "Tutorial")
+            {
+                DT.transform.position = v3 + new Vector3(220, 100, 0);
+                RT.transform.position = v3 + new Vector3(220, 95, 0);
+            }
+            if (SceneManager.GetActiveScene().name == "Stage1_1")
+            {
+                DT.transform.position = v3 + new Vector3(0, 100, 0);
+                RT.transform.position = v3 + new Vector3(0, 95, 0);
+            }
         }
     }
 }

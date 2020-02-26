@@ -18,6 +18,7 @@ TagManager:
   - acid
   - CM
   - wall
+  - arrow
   layers:
   - Default
   - TransparentFX

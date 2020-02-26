@@ -8,6 +8,10 @@ public class CheckPointManager : MonoBehaviour
     public static Vector3 checkpointPosition;
     public static Vector3 dif;
 
+    void Start()
+    {
+        checkpointPosition = PlayerController.v3;    
+    }
     void Awake()
     {
         if (cm == null)
