@@ -21,7 +21,11 @@ public class PlayerController : MonoBehaviour
         alive = true;
         jump = false;
         v3 = transform.position;
-        transform.position = CheckPointManager.checkpointPosition;
+        if (CheckPointManager.respawn)
+        {
+            transform.position = CheckPointManager.checkpointPosition;
+            CheckPointManager.respawn = false;
+        }
     }
     void Update()
     {
@@ -84,6 +88,7 @@ public class PlayerController : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 DT.text = "";
                 RT.text = "";
+                CheckPointManager.respawn = true;
             }
         }
         if (!Input.GetKey("left") && !Input.GetKey("right"))
