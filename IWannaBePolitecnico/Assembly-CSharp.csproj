@@ -69,12 +69,14 @@
     <Compile Include="Assets\Scripts\DoorController.cs" />
     <Compile Include="Assets\Scripts\DoorSwitchController.cs" />
     <Compile Include="Assets\Scripts\PlatformBoxController.cs" />
+    <Compile Include="Assets\Scripts\PlatformBoxController2.cs" />
     <Compile Include="Assets\Scripts\PlatformController2.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\ShootController.cs" />
     <Compile Include="Assets\Scripts\ShootDestroyer.cs" />
     <Compile Include="Assets\Scripts\SwitchController.cs" />
     <Compile Include="Assets\Scripts\SwitchController2.cs" />
+    <Compile Include="Assets\Scripts\SwitchController3.cs" />
     <Compile Include="Assets\Scripts\TextManager.cs" />
     <Compile Include="Assets\Scripts\Transition.cs" />
     <Compile Include="Assets\Scripts\TransitionLevelSelection.cs" />

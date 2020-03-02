@@ -141,6 +141,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "moving crate" || collision.transform.tag == "crate" || collision.transform.tag == "platform")
+        {
+            jump = true;
+        }
+    }
+
     private void OnCollisionExit(Collision collision)
     {
         if (collision.transform.tag == "Platform" || collision.transform.tag == "crate")
