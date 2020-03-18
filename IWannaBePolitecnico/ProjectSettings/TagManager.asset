@@ -19,6 +19,7 @@ TagManager:
   - CM
   - wall
   - arrow
+  - boss
   layers:
   - Default
   - TransparentFX

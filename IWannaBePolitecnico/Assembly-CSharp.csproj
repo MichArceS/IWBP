@@ -60,10 +60,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Boss1Controller.cs" />
+    <Compile Include="Assets\Scripts\BossSawController.cs" />
+    <Compile Include="Assets\Scripts\BossShootController.cs" />
     <Compile Include="Assets\Scripts\BoxOnOff_1.cs" />
     <Compile Include="Assets\Scripts\BoxOnOff_2.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\CameraFreezer.cs" />
+    <Compile Include="Assets\Scripts\cameraFreezerBoss.cs" />
     <Compile Include="Assets\Scripts\CheckPointController1.cs" />
     <Compile Include="Assets\Scripts\CheckPointManager.cs" />
     <Compile Include="Assets\Scripts\DoorController.cs" />

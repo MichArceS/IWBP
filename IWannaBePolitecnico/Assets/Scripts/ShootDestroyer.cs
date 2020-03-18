@@ -13,7 +13,6 @@ public class ShootDestroyer : MonoBehaviour
         if (timer > 0.5f)
         {
             Destroy(transform.parent.gameObject);
-            timer = 0;
         }
            
     }
@@ -24,7 +23,10 @@ public class ShootDestroyer : MonoBehaviour
         {
             Destroy(transform.parent.gameObject);
             Destroy(collision.gameObject);
-            timer = 0;
+        }
+        if (collision.CompareTag("boss"))
+        {
+            Destroy(transform.parent.gameObject);
         }
     }
 }

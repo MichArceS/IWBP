@@ -159,7 +159,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "acid" || collision.transform.tag == "arrow")
+        if (collision.transform.tag == "acid" || collision.transform.tag == "arrow" || collision.CompareTag("enemy") || collision.CompareTag("boss"))
         {
             alive = false;
             DT.text = "YOU DIED";
